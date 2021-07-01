@@ -54,7 +54,7 @@ print 'Ваш тип личности'
 3.times { sleep 0.5; print '. ' }
 puts "\e[H\e[2J"
 case $b
-when 'аааа' then name = 'Максим Горький'
+when 'аааа' then name = 'Макс Горький'
 when 'бббб' then name = 'Гексли'
 when 'абаб' then name = 'Гюго'
 when 'ббаб' then name = 'Наполеон'
