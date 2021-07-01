@@ -1,0 +1,3880 @@
+have_library: checking for tgetent() in -ltinfow... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby-2.5  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/usr/lib/ruby/2.5.0/mkmf.rb:395: warning: Insecure world writable dir /nix in PATH, mode 040777
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby-2.5 -ltinfow  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘tgetent’ undeclared (first use in this function); did you mean ‘getenv’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return !p; }
+                                                         ^~~~~~~
+                                                         getenv
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby-2.5 -ltinfow  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -ltinfow
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void tgetent();
+14: int t(void) { tgetent(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for tgetent() in -ltinfo... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby-2.5 -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘tgetent’ undeclared (first use in this function); did you mean ‘getenv’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return !p; }
+                                                         ^~~~~~~
+                                                         getenv
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby-2.5 -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void tgetent();
+14: int t(void) { tgetent(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for ncursesw/curses.h... -------------------- no
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ncursesw/curses.h: No such file or directory
+ #include <ncursesw/curses.h>
+          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncursesw/curses.h>
+/* end */
+
+--------------------
+
+have_header: checking for ncurses.h... -------------------- yes
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+/* end */
+
+--------------------
+
+have_library: checking for initscr() in -lncursesw... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -ltinfo  -lruby-2.5 -lncursesw -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lncursesw
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))initscr; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -ltinfo  -lruby-2.5 -lncursesw -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c:15:13: error: conflicting types for ‘initscr’
+ extern void initscr();
+             ^~~~~~~
+In file included from conftest.c:3:0:
+/usr/include/curses.h:660:33: note: previous declaration of ‘initscr’ was here
+ extern NCURSES_EXPORT(WINDOW *) initscr (void);    /* implemented */
+                                 ^~~~~~~
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: extern void initscr();
+16: int t(void) { initscr(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for initscr() in -lncurses... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))initscr; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for beep()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘beep’ undeclared (first use in this function); did you mean ‘exp’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))beep; return !p; }
+                                                         ^~~~
+                                                         exp
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))beep; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void beep();
+14: int t(void) { beep(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for bkgd()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘bkgd’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgd; return !p; }
+                                                         ^~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgd; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void bkgd();
+14: int t(void) { bkgd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for bkgdset()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘bkgdset’ undeclared (first use in this function); did you mean ‘rb_fd_set’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgdset; return !p; }
+                                                         ^~~~~~~
+                                                         rb_fd_set
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgdset; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void bkgdset();
+14: int t(void) { bkgdset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for curs_set()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘curs_set’ undeclared (first use in this function); did you mean ‘fd_set’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))curs_set; return !p; }
+                                                         ^~~~~~~~
+                                                         fd_set
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))curs_set; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void curs_set();
+14: int t(void) { curs_set(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for deleteln()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘deleteln’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))deleteln; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))deleteln; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void deleteln();
+14: int t(void) { deleteln(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for doupdate()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘doupdate’ undeclared (first use in this function); did you mean ‘st_update’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))doupdate; return !p; }
+                                                         ^~~~~~~~
+                                                         st_update
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))doupdate; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void doupdate();
+14: int t(void) { doupdate(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for flash()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘flash’ undeclared (first use in this function); did you mean ‘fflush’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))flash; return !p; }
+                                                         ^~~~~
+                                                         fflush
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))flash; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void flash();
+14: int t(void) { flash(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getbkgd()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘getbkgd’ undeclared (first use in this function); did you mean ‘getegid’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))getbkgd; return !p; }
+                                                         ^~~~~~~
+                                                         getegid
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))getbkgd; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void getbkgd();
+14: int t(void) { getbkgd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getnstr()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘getnstr’ undeclared (first use in this function); did you mean ‘getopt’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))getnstr; return !p; }
+                                                         ^~~~~~~
+                                                         getopt
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))getnstr; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void getnstr();
+14: int t(void) { getnstr(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for init()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘init’ undeclared (first use in this function); did you mean ‘int’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))init; return !p; }
+                                                         ^~~~
+                                                         int
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))init; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/ccmVq4vM.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `init'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void init();
+14: int t(void) { init(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for init in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === init undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef init
+6: # error
+7: |:/ === init undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for isendwin()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘isendwin’ undeclared (first use in this function); did you mean ‘isnan’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))isendwin; return !p; }
+                                                         ^~~~~~~~
+                                                         isnan
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))isendwin; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void isendwin();
+14: int t(void) { isendwin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for keyname()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘keyname’ undeclared (first use in this function); did you mean ‘ttyname’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))keyname; return !p; }
+                                                         ^~~~~~~
+                                                         ttyname
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))keyname; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void keyname();
+14: int t(void) { keyname(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for keypad()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘keypad’ undeclared (first use in this function); did you mean ‘getpid’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))keypad; return !p; }
+                                                         ^~~~~~
+                                                         getpid
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))keypad; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void keypad();
+14: int t(void) { keypad(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for resizeterm()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘resizeterm’ undeclared (first use in this function); did you mean ‘rb_fd_term’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))resizeterm; return !p; }
+                                                         ^~~~~~~~~~
+                                                         rb_fd_term
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))resizeterm; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void resizeterm();
+14: int t(void) { resizeterm(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for scrl()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘scrl’ undeclared (first use in this function); did you mean ‘sqrtl’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))scrl; return !p; }
+                                                         ^~~~
+                                                         sqrtl
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))scrl; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void scrl();
+14: int t(void) { scrl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for set()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘set’ undeclared (first use in this function); did you mean ‘sqrt’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))set; return !p; }
+                                                         ^~~
+                                                         sqrt
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))set; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/ccppjDm9.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `set'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void set();
+14: int t(void) { set(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for set in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === set undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef set
+6: # error
+7: |:/ === set undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for setscrreg()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘setscrreg’ undeclared (first use in this function); did you mean ‘setstate’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))setscrreg; return !p; }
+                                                         ^~~~~~~~~
+                                                         setstate
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))setscrreg; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void setscrreg();
+14: int t(void) { setscrreg(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ungetch()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘ungetch’ undeclared (first use in this function); did you mean ‘ungetc’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))ungetch; return !p; }
+                                                         ^~~~~~~
+                                                         ungetc
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ungetch; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void ungetch();
+14: int t(void) { ungetch(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for addnwstr()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘addnwstr’ undeclared (first use in this function); did you mean ‘confstr’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))addnwstr; return !p; }
+                                                         ^~~~~~~~
+                                                         confstr
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))addnwstr; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/ccMyTyNs.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `addnwstr'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void addnwstr();
+14: int t(void) { addnwstr(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for addnwstr in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === addnwstr undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef addnwstr
+6: # error
+7: |:/ === addnwstr undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for wattroff()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wattroff’ undeclared (first use in this function); did you mean ‘pathconf’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wattroff; return !p; }
+                                                         ^~~~~~~~
+                                                         pathconf
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wattroff; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wattroff();
+14: int t(void) { wattroff(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wattron()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wattron’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wattron; return !p; }
+                                                         ^~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wattron; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wattron();
+14: int t(void) { wattron(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wattrset()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wattrset’ undeclared (first use in this function); did you mean ‘strsep’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wattrset; return !p; }
+                                                         ^~~~~~~~
+                                                         strsep
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wattrset; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wattrset();
+14: int t(void) { wattrset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wbkgd()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wbkgd’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgd; return !p; }
+                                                         ^~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgd; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wbkgd();
+14: int t(void) { wbkgd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wbkgdset()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wbkgdset’ undeclared (first use in this function); did you mean ‘rb_fd_set’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgdset; return !p; }
+                                                         ^~~~~~~~
+                                                         rb_fd_set
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgdset; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wbkgdset();
+14: int t(void) { wbkgdset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wdeleteln()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wdeleteln’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wdeleteln; return !p; }
+                                                         ^~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wdeleteln; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wdeleteln();
+14: int t(void) { wdeleteln(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wgetnstr()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wgetnstr’ undeclared (first use in this function); did you mean ‘getopt’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wgetnstr; return !p; }
+                                                         ^~~~~~~~
+                                                         getopt
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wgetnstr; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wgetnstr();
+14: int t(void) { wgetnstr(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wresize()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wresize’ undeclared (first use in this function); did you mean ‘write’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wresize; return !p; }
+                                                         ^~~~~~~
+                                                         write
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wresize; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wresize();
+14: int t(void) { wresize(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wscrl()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wscrl’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wscrl; return !p; }
+                                                         ^~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wscrl; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wscrl();
+14: int t(void) { wscrl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wsetscrreg()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wsetscrreg’ undeclared (first use in this function); did you mean ‘setstate’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wsetscrreg; return !p; }
+                                                         ^~~~~~~~~~
+                                                         setstate
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wsetscrreg; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wsetscrreg();
+14: int t(void) { wsetscrreg(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for werase()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘werase’ undeclared (first use in this function); did you mean ‘write’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))werase; return !p; }
+                                                         ^~~~~~
+                                                         write
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))werase; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void werase();
+14: int t(void) { werase(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for redrawwin()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘redrawwin’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))redrawwin; return !p; }
+                                                         ^~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))redrawwin; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void redrawwin();
+14: int t(void) { redrawwin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for waddnwstr()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘waddnwstr’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))waddnwstr; return !p; }
+                                                         ^~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))waddnwstr; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/cceJ72L1.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `waddnwstr'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void waddnwstr();
+14: int t(void) { waddnwstr(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for waddnwstr in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === waddnwstr undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef waddnwstr
+6: # error
+7: |:/ === waddnwstr undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for mvderwin()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mvderwin’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mvderwin; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mvderwin; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mvderwin();
+14: int t(void) { mvderwin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for derwin()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘derwin’ undeclared (first use in this function); did you mean ‘rewind’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))derwin; return !p; }
+                                                         ^~~~~~
+                                                         rewind
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))derwin; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void derwin();
+14: int t(void) { derwin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for touchwin()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘touchwin’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))touchwin; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))touchwin; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void touchwin();
+14: int t(void) { touchwin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for untouchwin()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘untouchwin’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))untouchwin; return !p; }
+                                                         ^~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))untouchwin; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void untouchwin();
+14: int t(void) { untouchwin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wtouchln()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wtouchln’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wtouchln; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wtouchln; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wtouchln();
+14: int t(void) { wtouchln(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for is_linetouched()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘is_linetouched’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))is_linetouched; return !p; }
+                                                         ^~~~~~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))is_linetouched; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void is_linetouched();
+14: int t(void) { is_linetouched(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for is_wintouched()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘is_wintouched’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))is_wintouched; return !p; }
+                                                         ^~~~~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))is_wintouched; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void is_wintouched();
+14: int t(void) { is_wintouched(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for def_prog_mode()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘def_prog_mode’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))def_prog_mode; return !p; }
+                                                         ^~~~~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))def_prog_mode; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void def_prog_mode();
+14: int t(void) { def_prog_mode(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for reset_prog_mode()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘reset_prog_mode’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))reset_prog_mode; return !p; }
+                                                         ^~~~~~~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))reset_prog_mode; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void reset_prog_mode();
+14: int t(void) { reset_prog_mode(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for timeout()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘timeout’ undeclared (first use in this function); did you mean ‘timer_t’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))timeout; return !p; }
+                                                         ^~~~~~~
+                                                         timer_t
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))timeout; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void timeout();
+14: int t(void) { timeout(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wtimeout()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wtimeout’ undeclared (first use in this function); did you mean ‘timer_t’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wtimeout; return !p; }
+                                                         ^~~~~~~~
+                                                         timer_t
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wtimeout; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wtimeout();
+14: int t(void) { wtimeout(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for nodelay()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘nodelay’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))nodelay; return !p; }
+                                                         ^~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))nodelay; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void nodelay();
+14: int t(void) { nodelay(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for init_color()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘init_color’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))init_color; return !p; }
+                                                         ^~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))init_color; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void init_color();
+14: int t(void) { init_color(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wcolor_set()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wcolor_set’ undeclared (first use in this function); did you mean ‘close’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wcolor_set; return !p; }
+                                                         ^~~~~~~~~~
+                                                         close
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wcolor_set; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wcolor_set();
+14: int t(void) { wcolor_set(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for use_default_colors()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘use_default_colors’ undeclared (first use in this function); did you mean ‘rb_default_rs’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))use_default_colors; return !p; }
+                                                         ^~~~~~~~~~~~~~~~~~
+                                                         rb_default_rs
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))use_default_colors; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void use_default_colors();
+14: int t(void) { use_default_colors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for assume_default_colors()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘assume_default_colors’ undeclared (first use in this function); did you mean ‘rb_default_rs’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))assume_default_colors; return !p; }
+                                                         ^~~~~~~~~~~~~~~~~~~~~
+                                                         rb_default_rs
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))assume_default_colors; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void assume_default_colors();
+14: int t(void) { assume_default_colors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for newpad()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘newpad’ undeclared (first use in this function); did you mean ‘getpid’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))newpad; return !p; }
+                                                         ^~~~~~
+                                                         getpid
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))newpad; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void newpad();
+14: int t(void) { newpad(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for unget_wch()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘unget_wch’ undeclared (first use in this function); did you mean ‘ungetc’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))unget_wch; return !p; }
+                                                         ^~~~~~~~~
+                                                         ungetc
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))unget_wch; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/ccGp3zFv.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `unget_wch'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void unget_wch();
+14: int t(void) { unget_wch(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for unget_wch in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === unget_wch undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef unget_wch
+6: # error
+7: |:/ === unget_wch undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for get_wch()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘get_wch’ undeclared (first use in this function); did you mean ‘getwd’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))get_wch; return !p; }
+                                                         ^~~~~~~
+                                                         getwd
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))get_wch; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/cc2LML7d.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `get_wch'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void get_wch();
+14: int t(void) { get_wch(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for get_wch in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === get_wch undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef get_wch
+6: # error
+7: |:/ === get_wch undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for wget_wch()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘wget_wch’ undeclared (first use in this function); did you mean ‘getwd’?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))wget_wch; return !p; }
+                                                         ^~~~~~~~
+                                                         getwd
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wget_wch; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/ccSrVUdS.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `wget_wch'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void wget_wch();
+14: int t(void) { wget_wch(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for wget_wch in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === wget_wch undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef wget_wch
+6: # error
+7: |:/ === wget_wch undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for PDC_get_key_modifiers()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘PDC_get_key_modifiers’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))PDC_get_key_modifiers; return !p; }
+                                                         ^~~~~~~~~~~~~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))PDC_get_key_modifiers; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/ccojEbPG.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `PDC_get_key_modifiers'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void PDC_get_key_modifiers();
+14: int t(void) { PDC_get_key_modifiers(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for PDC_get_key_modifiers in ncurses.h... -------------------- no
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+ # error
+   ^~~~~
+conftest.c:7:1: error: expected identifier or ‘(’ before ‘|’ token
+ |:/ === PDC_get_key_modifiers undefined === /:|
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef PDC_get_key_modifiers
+6: # error
+7: |:/ === PDC_get_key_modifiers undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+convertible_int: checking for convertible type of chtype... -------------------- unsigned long
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+conftest.c:8:5: error: size of array ‘conftest_const’ is negative
+ int conftest_const[((rbcv_typedef_)-1 < 0) ? 1 : -1];
+     ^~~~~~~~~~~~~~
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #undef MOUSE_MOVED
+4: #include <ncurses.h>
+5: typedef chtype rbcv_typedef_;
+6: 
+7: /*top*/
+8: int conftest_const[((rbcv_typedef_)-1 < 0) ? 1 : -1];
+/* end */
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #undef MOUSE_MOVED
+4: #include <ncurses.h>
+5: typedef chtype rbcv_typedef_;
+6: 
+7: /*top*/
+8: int conftest_const[((rbcv_typedef_)-1 > 0) ? 1 : -1];
+/* end */
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -Werror -c conftest.c"
+conftest.c:10:21: error: conflicting types for ‘foo’
+ extern unsigned int foo();
+                     ^~~
+conftest.c:9:22: note: previous declaration of ‘foo’ was here
+ extern rbcv_typedef_ foo();
+                      ^~~
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #undef MOUSE_MOVED
+ 4: 
+ 5: #include <ncurses.h>
+ 6: 
+ 7: typedef chtype rbcv_typedef_;
+ 8: 
+ 9: extern rbcv_typedef_ foo();
+10: extern unsigned int foo();
+/* end */
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -Werror -c conftest.c"
+conftest.c:10:23: error: conflicting types for ‘foo’
+ extern unsigned short foo();
+                       ^~~
+conftest.c:9:22: note: previous declaration of ‘foo’ was here
+ extern rbcv_typedef_ foo();
+                      ^~~
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #undef MOUSE_MOVED
+ 4: 
+ 5: #include <ncurses.h>
+ 6: 
+ 7: typedef chtype rbcv_typedef_;
+ 8: 
+ 9: extern rbcv_typedef_ foo();
+10: extern unsigned short foo();
+/* end */
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -Werror -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #undef MOUSE_MOVED
+ 4: 
+ 5: #include <ncurses.h>
+ 6: 
+ 7: typedef chtype rbcv_typedef_;
+ 8: 
+ 9: extern rbcv_typedef_ foo();
+10: extern unsigned long foo();
+/* end */
+
+--------------------
+
+checking for _XOPEN_SOURCE_EXTENDED... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -D_XOPEN_SOURCE_EXTENDED -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <stdio.h>
+4: #include <stdlib.h>
+5: #include <ncurses.h>
+/* end */
+
+--------------------
+
+have_var: checking for ESCDELAY in ncurses.h... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&ESCDELAY)[0]; return !p; }
+/* end */
+
+--------------------
+
+have_var: checking for TABSIZE in ncurses.h... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&TABSIZE)[0]; return !p; }
+/* end */
+
+--------------------
+
+have_var: checking for COLORS in ncurses.h... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&COLORS)[0]; return !p; }
+/* end */
+
+--------------------
+
+have_var: checking for COLOR_PAIRS in ncurses.h... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&COLOR_PAIRS)[0]; return !p; }
+/* end */
+
+--------------------
+
+checking for function curses_version in ncurses.h... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4:       int main(int argc, char *argv[])
+5:       {
+6:           curses_version();
+7:           return EXIT_SUCCESS;
+8:       }
+/* end */
+
+./conftest
+--------------------
+
+checking for variable curses_version in ncurses.h... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c:4:20: error: ‘curses_version’ redeclared as different kind of symbol
+       extern char *curses_version;
+                    ^~~~~~~~~~~~~~
+In file included from conftest.c:3:0:
+/usr/include/curses.h:923:37: note: previous declaration of ‘curses_version’ was here
+ extern NCURSES_EXPORT(const char *) curses_version (void);
+                                     ^~~~~~~~~~~~~~
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4:       extern char *curses_version;
+ 5:       int main(int argc, char *argv[])
+ 6:       {
+ 7:           int i = 0;
+ 8:           for (i = 0; i < 100; i++) {
+ 9:               if (curses_version[i] == 0)
+10:                   return 0 < i ? EXIT_SUCCESS : EXIT_FAILURE;
+11:               if (curses_version[i] & 0x80)
+12:                   return EXIT_FAILURE;
+13:           }
+14:           return EXIT_FAILURE;
+15:       }
+/* end */
+
+--------------------
+
+have_header: checking for ncursesw/menu.h... -------------------- no
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ncursesw/menu.h: No such file or directory
+ #include <ncursesw/menu.h>
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncursesw/menu.h>
+/* end */
+
+--------------------
+
+have_header: checking for ncurses/menu.h... -------------------- no
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ncurses/menu.h: No such file or directory
+ #include <ncurses/menu.h>
+          ^~~~~~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses/menu.h>
+/* end */
+
+--------------------
+
+have_header: checking for curses/menu.h... -------------------- no
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: curses/menu.h: No such file or directory
+ #include <curses/menu.h>
+          ^~~~~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <curses/menu.h>
+/* end */
+
+--------------------
+
+have_header: checking for menu.h... -------------------- yes
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <menu.h>
+/* end */
+
+--------------------
+
+have_library: checking for new_menu() in -lmenuw... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lmenuw -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘new_menu’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))new_menu; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))new_menu; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lmenuw -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmenuw
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void new_menu();
+14: int t(void) { new_menu(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for new_menu() in -lmenu... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘new_menu’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))new_menu; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))new_menu; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lncurses -ltinfo  -lruby-2.5 -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void new_menu();
+14: int t(void) { new_menu(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for ncursesw/form.h... -------------------- no
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ncursesw/form.h: No such file or directory
+ #include <ncursesw/form.h>
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncursesw/form.h>
+/* end */
+
+--------------------
+
+have_header: checking for ncurses/form.h... -------------------- no
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ncurses/form.h: No such file or directory
+ #include <ncurses/form.h>
+          ^~~~~~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses/form.h>
+/* end */
+
+--------------------
+
+have_header: checking for curses/form.h... -------------------- no
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: curses/form.h: No such file or directory
+ #include <curses/form.h>
+          ^~~~~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <curses/form.h>
+/* end */
+
+--------------------
+
+have_header: checking for form.h... -------------------- yes
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <form.h>
+/* end */
+
+--------------------
+
+have_library: checking for new_form() in -lformw... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lmenu -lncurses -ltinfo  -lruby-2.5 -lformw -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘new_form’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))new_form; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))new_form; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lmenu -lncurses -ltinfo  -lruby-2.5 -lformw -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lformw
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void new_form();
+14: int t(void) { new_form(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for new_form() in -lform... -------------------- yes
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lmenu -lncurses -ltinfo  -lruby-2.5 -lform -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘new_form’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))new_form; return !p; }
+                                                         ^~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))new_form; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lmenu -lncurses -ltinfo  -lruby-2.5 -lform -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void new_form();
+14: int t(void) { new_form(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for form_driver_w()... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lform -lmenu -lncurses -ltinfo  -lruby-2.5 -lform -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘form_driver_w’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))form_driver_w; return !p; }
+                                                         ^~~~~~~~~~~~~
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))form_driver_w; return !p; }
+/* end */
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic    -lform -lmenu -lncurses -ltinfo  -lruby-2.5 -lform -lmenu -lncurses -ltinfo  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/tmp/ccE47NZF.o: In function `t':
+/home/runner/Socioniks/.bundle/ruby/2.5.0/gems/curses-1.4.2/ext/curses/conftest.c:14: undefined reference to `form_driver_w'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void form_driver_w();
+14: int t(void) { form_driver_w(); return 0; }
+/* end */
+
+--------------------
+
+block in <main>: checking for sizeof(WINDOW) is available... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -DHAVE_NCURSES_H -DHAVE_BEEP -DHAVE_BKGD -DHAVE_BKGDSET -DHAVE_CURS_SET -DHAVE_DELETELN -DHAVE_DOUPDATE -DHAVE_FLASH -DHAVE_GETBKGD -DHAVE_GETNSTR -DHAVE_ISENDWIN -DHAVE_KEYNAME -DHAVE_KEYPAD -DHAVE_RESIZETERM -DHAVE_SCRL -DHAVE_SETSCRREG -DHAVE_UNGETCH -DHAVE_WATTROFF -DHAVE_WATTRON -DHAVE_WATTRSET -DHAVE_WBKGD -DHAVE_WBKGDSET -DHAVE_WDELETELN -DHAVE_WGETNSTR -DHAVE_WRESIZE -DHAVE_WSCRL -DHAVE_WSETSCRREG -DHAVE_WERASE -DHAVE_REDRAWWIN -DHAVE_MVDERWIN -DHAVE_DERWIN -DHAVE_TOUCHWIN -DHAVE_UNTOUCHWIN -DHAVE_WTOUCHLN -DHAVE_IS_LINETOUCHED -DHAVE_IS_WINTOUCHED -DHAVE_DEF_PROG_MODE -DHAVE_RESET_PROG_MODE -DHAVE_TIMEOUT -DHAVE_WTIMEOUT -DHAVE_NODELAY -DHAVE_INIT_COLOR -DHAVE_WCOLOR_SET -DHAVE_USE_DEFAULT_COLORS -DHAVE_ASSUME_DEFAULT_COLORS -DHAVE_NEWPAD -DSIZEOF_CHTYPE\=SIZEOF_UNSIGNED_LONG -DTYPEOF_CHTYPE\=\"unsigned\ long\" -DPRI_CHTYPE_PREFIX\=PRI_LONG_PREFIX -DCHTYPE2NUM\=ULONG2NUM -DNUM2CHTYPE\=NUM2ULONG -D_XOPEN_SOURCE_EXTENDED -DHAVE_ESCDELAY -DHAVE_TABSIZE -DHAVE_COLORS -DHAVE_COLOR_PAIRS -DHAVE_FUNC_CURSES_VERSION -DHAVE_MENU_H -DHAVE_MENU -DHAVE_FORM_H -DHAVE_FORM -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #if defined(HAVE_PDCURSES_H)
+ 4: # include <pdcurses.h>
+ 5: #elif defined(HAVE_NCURSESW_CURSES_H)
+ 6: # include <ncursesw/curses.h>
+ 7: #elif defined(HAVE_NCURSES_CURSES_H)
+ 8: # include <ncurses/curses.h>
+ 9: #elif defined(HAVE_NCURSES_H)
+10: # include <ncurses.h>
+11: #elif defined(HAVE_CURSES_COLR_CURSES_H)
+12: # ifdef HAVE_STDARG_PROTOTYPES
+13: #  include <stdarg.h>
+14: # else
+15: #  include <varargs.h>
+16: # endif
+17: # include <curses_colr/curses.h>
+18: #else
+19: # include <curses.h>
+20: #endif
+21: 
+22: #if defined(HAVE_NCURSESW_MENU_H)
+23: # include <ncursesw/menu.h>
+24: #elif defined(HAVE_NCURSES_MENU_H)
+25: # include <ncurses/menu.h>
+26: #elif defined(HAVE_CURSES_MENU_H)
+27: # include <curses/menu.h>
+28: #elif defined(HAVE_MENU_H)
+29: # include <menu.h>
+30: #endif
+31: 
+32: #if defined(HAVE_NCURSESW_FORM_H)
+33: # include <ncursesw/form.h>
+34: #elif defined(HAVE_NCURSES_FORM_H)
+35: # include <ncurses/form.h>
+36: #elif defined(HAVE_CURSES_FORM_H)
+37: # include <curses/form.h>
+38: #elif defined(HAVE_FORM_H)
+39: # include <form.h>
+40: #endif
+41: 
+42: const int sizeof_WINDOW = (int) sizeof(WINDOW);
+/* end */
+
+--------------------
+
+block in <main>: checking for sizeof(MEVENT) is available... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -DHAVE_NCURSES_H -DHAVE_BEEP -DHAVE_BKGD -DHAVE_BKGDSET -DHAVE_CURS_SET -DHAVE_DELETELN -DHAVE_DOUPDATE -DHAVE_FLASH -DHAVE_GETBKGD -DHAVE_GETNSTR -DHAVE_ISENDWIN -DHAVE_KEYNAME -DHAVE_KEYPAD -DHAVE_RESIZETERM -DHAVE_SCRL -DHAVE_SETSCRREG -DHAVE_UNGETCH -DHAVE_WATTROFF -DHAVE_WATTRON -DHAVE_WATTRSET -DHAVE_WBKGD -DHAVE_WBKGDSET -DHAVE_WDELETELN -DHAVE_WGETNSTR -DHAVE_WRESIZE -DHAVE_WSCRL -DHAVE_WSETSCRREG -DHAVE_WERASE -DHAVE_REDRAWWIN -DHAVE_MVDERWIN -DHAVE_DERWIN -DHAVE_TOUCHWIN -DHAVE_UNTOUCHWIN -DHAVE_WTOUCHLN -DHAVE_IS_LINETOUCHED -DHAVE_IS_WINTOUCHED -DHAVE_DEF_PROG_MODE -DHAVE_RESET_PROG_MODE -DHAVE_TIMEOUT -DHAVE_WTIMEOUT -DHAVE_NODELAY -DHAVE_INIT_COLOR -DHAVE_WCOLOR_SET -DHAVE_USE_DEFAULT_COLORS -DHAVE_ASSUME_DEFAULT_COLORS -DHAVE_NEWPAD -DSIZEOF_CHTYPE\=SIZEOF_UNSIGNED_LONG -DTYPEOF_CHTYPE\=\"unsigned\ long\" -DPRI_CHTYPE_PREFIX\=PRI_LONG_PREFIX -DCHTYPE2NUM\=ULONG2NUM -DNUM2CHTYPE\=NUM2ULONG -D_XOPEN_SOURCE_EXTENDED -DHAVE_ESCDELAY -DHAVE_TABSIZE -DHAVE_COLORS -DHAVE_COLOR_PAIRS -DHAVE_FUNC_CURSES_VERSION -DHAVE_MENU_H -DHAVE_MENU -DHAVE_FORM_H -DHAVE_FORM -DCURSES_SIZEOF_WINDOW\=sizeof\(WINDOW\) -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #if defined(HAVE_PDCURSES_H)
+ 4: # include <pdcurses.h>
+ 5: #elif defined(HAVE_NCURSESW_CURSES_H)
+ 6: # include <ncursesw/curses.h>
+ 7: #elif defined(HAVE_NCURSES_CURSES_H)
+ 8: # include <ncurses/curses.h>
+ 9: #elif defined(HAVE_NCURSES_H)
+10: # include <ncurses.h>
+11: #elif defined(HAVE_CURSES_COLR_CURSES_H)
+12: # ifdef HAVE_STDARG_PROTOTYPES
+13: #  include <stdarg.h>
+14: # else
+15: #  include <varargs.h>
+16: # endif
+17: # include <curses_colr/curses.h>
+18: #else
+19: # include <curses.h>
+20: #endif
+21: 
+22: #if defined(HAVE_NCURSESW_MENU_H)
+23: # include <ncursesw/menu.h>
+24: #elif defined(HAVE_NCURSES_MENU_H)
+25: # include <ncurses/menu.h>
+26: #elif defined(HAVE_CURSES_MENU_H)
+27: # include <curses/menu.h>
+28: #elif defined(HAVE_MENU_H)
+29: # include <menu.h>
+30: #endif
+31: 
+32: #if defined(HAVE_NCURSESW_FORM_H)
+33: # include <ncursesw/form.h>
+34: #elif defined(HAVE_NCURSES_FORM_H)
+35: # include <ncurses/form.h>
+36: #elif defined(HAVE_CURSES_FORM_H)
+37: # include <curses/form.h>
+38: #elif defined(HAVE_FORM_H)
+39: # include <form.h>
+40: #endif
+41: 
+42: const int sizeof_MEVENT = (int) sizeof(MEVENT);
+/* end */
+
+--------------------
+
+block in <main>: checking for sizeof(ITEM) is available... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -DHAVE_NCURSES_H -DHAVE_BEEP -DHAVE_BKGD -DHAVE_BKGDSET -DHAVE_CURS_SET -DHAVE_DELETELN -DHAVE_DOUPDATE -DHAVE_FLASH -DHAVE_GETBKGD -DHAVE_GETNSTR -DHAVE_ISENDWIN -DHAVE_KEYNAME -DHAVE_KEYPAD -DHAVE_RESIZETERM -DHAVE_SCRL -DHAVE_SETSCRREG -DHAVE_UNGETCH -DHAVE_WATTROFF -DHAVE_WATTRON -DHAVE_WATTRSET -DHAVE_WBKGD -DHAVE_WBKGDSET -DHAVE_WDELETELN -DHAVE_WGETNSTR -DHAVE_WRESIZE -DHAVE_WSCRL -DHAVE_WSETSCRREG -DHAVE_WERASE -DHAVE_REDRAWWIN -DHAVE_MVDERWIN -DHAVE_DERWIN -DHAVE_TOUCHWIN -DHAVE_UNTOUCHWIN -DHAVE_WTOUCHLN -DHAVE_IS_LINETOUCHED -DHAVE_IS_WINTOUCHED -DHAVE_DEF_PROG_MODE -DHAVE_RESET_PROG_MODE -DHAVE_TIMEOUT -DHAVE_WTIMEOUT -DHAVE_NODELAY -DHAVE_INIT_COLOR -DHAVE_WCOLOR_SET -DHAVE_USE_DEFAULT_COLORS -DHAVE_ASSUME_DEFAULT_COLORS -DHAVE_NEWPAD -DSIZEOF_CHTYPE\=SIZEOF_UNSIGNED_LONG -DTYPEOF_CHTYPE\=\"unsigned\ long\" -DPRI_CHTYPE_PREFIX\=PRI_LONG_PREFIX -DCHTYPE2NUM\=ULONG2NUM -DNUM2CHTYPE\=NUM2ULONG -D_XOPEN_SOURCE_EXTENDED -DHAVE_ESCDELAY -DHAVE_TABSIZE -DHAVE_COLORS -DHAVE_COLOR_PAIRS -DHAVE_FUNC_CURSES_VERSION -DHAVE_MENU_H -DHAVE_MENU -DHAVE_FORM_H -DHAVE_FORM -DCURSES_SIZEOF_WINDOW\=sizeof\(WINDOW\) -DCURSES_SIZEOF_MEVENT\=sizeof\(MEVENT\) -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #if defined(HAVE_PDCURSES_H)
+ 4: # include <pdcurses.h>
+ 5: #elif defined(HAVE_NCURSESW_CURSES_H)
+ 6: # include <ncursesw/curses.h>
+ 7: #elif defined(HAVE_NCURSES_CURSES_H)
+ 8: # include <ncurses/curses.h>
+ 9: #elif defined(HAVE_NCURSES_H)
+10: # include <ncurses.h>
+11: #elif defined(HAVE_CURSES_COLR_CURSES_H)
+12: # ifdef HAVE_STDARG_PROTOTYPES
+13: #  include <stdarg.h>
+14: # else
+15: #  include <varargs.h>
+16: # endif
+17: # include <curses_colr/curses.h>
+18: #else
+19: # include <curses.h>
+20: #endif
+21: 
+22: #if defined(HAVE_NCURSESW_MENU_H)
+23: # include <ncursesw/menu.h>
+24: #elif defined(HAVE_NCURSES_MENU_H)
+25: # include <ncurses/menu.h>
+26: #elif defined(HAVE_CURSES_MENU_H)
+27: # include <curses/menu.h>
+28: #elif defined(HAVE_MENU_H)
+29: # include <menu.h>
+30: #endif
+31: 
+32: #if defined(HAVE_NCURSESW_FORM_H)
+33: # include <ncursesw/form.h>
+34: #elif defined(HAVE_NCURSES_FORM_H)
+35: # include <ncurses/form.h>
+36: #elif defined(HAVE_CURSES_FORM_H)
+37: # include <curses/form.h>
+38: #elif defined(HAVE_FORM_H)
+39: # include <form.h>
+40: #endif
+41: 
+42: const int sizeof_ITEM = (int) sizeof(ITEM);
+/* end */
+
+--------------------
+
+block in <main>: checking for sizeof(MENU) is available... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -DHAVE_NCURSES_H -DHAVE_BEEP -DHAVE_BKGD -DHAVE_BKGDSET -DHAVE_CURS_SET -DHAVE_DELETELN -DHAVE_DOUPDATE -DHAVE_FLASH -DHAVE_GETBKGD -DHAVE_GETNSTR -DHAVE_ISENDWIN -DHAVE_KEYNAME -DHAVE_KEYPAD -DHAVE_RESIZETERM -DHAVE_SCRL -DHAVE_SETSCRREG -DHAVE_UNGETCH -DHAVE_WATTROFF -DHAVE_WATTRON -DHAVE_WATTRSET -DHAVE_WBKGD -DHAVE_WBKGDSET -DHAVE_WDELETELN -DHAVE_WGETNSTR -DHAVE_WRESIZE -DHAVE_WSCRL -DHAVE_WSETSCRREG -DHAVE_WERASE -DHAVE_REDRAWWIN -DHAVE_MVDERWIN -DHAVE_DERWIN -DHAVE_TOUCHWIN -DHAVE_UNTOUCHWIN -DHAVE_WTOUCHLN -DHAVE_IS_LINETOUCHED -DHAVE_IS_WINTOUCHED -DHAVE_DEF_PROG_MODE -DHAVE_RESET_PROG_MODE -DHAVE_TIMEOUT -DHAVE_WTIMEOUT -DHAVE_NODELAY -DHAVE_INIT_COLOR -DHAVE_WCOLOR_SET -DHAVE_USE_DEFAULT_COLORS -DHAVE_ASSUME_DEFAULT_COLORS -DHAVE_NEWPAD -DSIZEOF_CHTYPE\=SIZEOF_UNSIGNED_LONG -DTYPEOF_CHTYPE\=\"unsigned\ long\" -DPRI_CHTYPE_PREFIX\=PRI_LONG_PREFIX -DCHTYPE2NUM\=ULONG2NUM -DNUM2CHTYPE\=NUM2ULONG -D_XOPEN_SOURCE_EXTENDED -DHAVE_ESCDELAY -DHAVE_TABSIZE -DHAVE_COLORS -DHAVE_COLOR_PAIRS -DHAVE_FUNC_CURSES_VERSION -DHAVE_MENU_H -DHAVE_MENU -DHAVE_FORM_H -DHAVE_FORM -DCURSES_SIZEOF_WINDOW\=sizeof\(WINDOW\) -DCURSES_SIZEOF_MEVENT\=sizeof\(MEVENT\) -DCURSES_SIZEOF_ITEM\=sizeof\(ITEM\) -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #if defined(HAVE_PDCURSES_H)
+ 4: # include <pdcurses.h>
+ 5: #elif defined(HAVE_NCURSESW_CURSES_H)
+ 6: # include <ncursesw/curses.h>
+ 7: #elif defined(HAVE_NCURSES_CURSES_H)
+ 8: # include <ncurses/curses.h>
+ 9: #elif defined(HAVE_NCURSES_H)
+10: # include <ncurses.h>
+11: #elif defined(HAVE_CURSES_COLR_CURSES_H)
+12: # ifdef HAVE_STDARG_PROTOTYPES
+13: #  include <stdarg.h>
+14: # else
+15: #  include <varargs.h>
+16: # endif
+17: # include <curses_colr/curses.h>
+18: #else
+19: # include <curses.h>
+20: #endif
+21: 
+22: #if defined(HAVE_NCURSESW_MENU_H)
+23: # include <ncursesw/menu.h>
+24: #elif defined(HAVE_NCURSES_MENU_H)
+25: # include <ncurses/menu.h>
+26: #elif defined(HAVE_CURSES_MENU_H)
+27: # include <curses/menu.h>
+28: #elif defined(HAVE_MENU_H)
+29: # include <menu.h>
+30: #endif
+31: 
+32: #if defined(HAVE_NCURSESW_FORM_H)
+33: # include <ncursesw/form.h>
+34: #elif defined(HAVE_NCURSES_FORM_H)
+35: # include <ncurses/form.h>
+36: #elif defined(HAVE_CURSES_FORM_H)
+37: # include <curses/form.h>
+38: #elif defined(HAVE_FORM_H)
+39: # include <form.h>
+40: #endif
+41: 
+42: const int sizeof_MENU = (int) sizeof(MENU);
+/* end */
+
+--------------------
+
+block in <main>: checking for sizeof(FIELD) is available... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -DHAVE_NCURSES_H -DHAVE_BEEP -DHAVE_BKGD -DHAVE_BKGDSET -DHAVE_CURS_SET -DHAVE_DELETELN -DHAVE_DOUPDATE -DHAVE_FLASH -DHAVE_GETBKGD -DHAVE_GETNSTR -DHAVE_ISENDWIN -DHAVE_KEYNAME -DHAVE_KEYPAD -DHAVE_RESIZETERM -DHAVE_SCRL -DHAVE_SETSCRREG -DHAVE_UNGETCH -DHAVE_WATTROFF -DHAVE_WATTRON -DHAVE_WATTRSET -DHAVE_WBKGD -DHAVE_WBKGDSET -DHAVE_WDELETELN -DHAVE_WGETNSTR -DHAVE_WRESIZE -DHAVE_WSCRL -DHAVE_WSETSCRREG -DHAVE_WERASE -DHAVE_REDRAWWIN -DHAVE_MVDERWIN -DHAVE_DERWIN -DHAVE_TOUCHWIN -DHAVE_UNTOUCHWIN -DHAVE_WTOUCHLN -DHAVE_IS_LINETOUCHED -DHAVE_IS_WINTOUCHED -DHAVE_DEF_PROG_MODE -DHAVE_RESET_PROG_MODE -DHAVE_TIMEOUT -DHAVE_WTIMEOUT -DHAVE_NODELAY -DHAVE_INIT_COLOR -DHAVE_WCOLOR_SET -DHAVE_USE_DEFAULT_COLORS -DHAVE_ASSUME_DEFAULT_COLORS -DHAVE_NEWPAD -DSIZEOF_CHTYPE\=SIZEOF_UNSIGNED_LONG -DTYPEOF_CHTYPE\=\"unsigned\ long\" -DPRI_CHTYPE_PREFIX\=PRI_LONG_PREFIX -DCHTYPE2NUM\=ULONG2NUM -DNUM2CHTYPE\=NUM2ULONG -D_XOPEN_SOURCE_EXTENDED -DHAVE_ESCDELAY -DHAVE_TABSIZE -DHAVE_COLORS -DHAVE_COLOR_PAIRS -DHAVE_FUNC_CURSES_VERSION -DHAVE_MENU_H -DHAVE_MENU -DHAVE_FORM_H -DHAVE_FORM -DCURSES_SIZEOF_WINDOW\=sizeof\(WINDOW\) -DCURSES_SIZEOF_MEVENT\=sizeof\(MEVENT\) -DCURSES_SIZEOF_ITEM\=sizeof\(ITEM\) -DCURSES_SIZEOF_MENU\=sizeof\(MENU\) -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #if defined(HAVE_PDCURSES_H)
+ 4: # include <pdcurses.h>
+ 5: #elif defined(HAVE_NCURSESW_CURSES_H)
+ 6: # include <ncursesw/curses.h>
+ 7: #elif defined(HAVE_NCURSES_CURSES_H)
+ 8: # include <ncurses/curses.h>
+ 9: #elif defined(HAVE_NCURSES_H)
+10: # include <ncurses.h>
+11: #elif defined(HAVE_CURSES_COLR_CURSES_H)
+12: # ifdef HAVE_STDARG_PROTOTYPES
+13: #  include <stdarg.h>
+14: # else
+15: #  include <varargs.h>
+16: # endif
+17: # include <curses_colr/curses.h>
+18: #else
+19: # include <curses.h>
+20: #endif
+21: 
+22: #if defined(HAVE_NCURSESW_MENU_H)
+23: # include <ncursesw/menu.h>
+24: #elif defined(HAVE_NCURSES_MENU_H)
+25: # include <ncurses/menu.h>
+26: #elif defined(HAVE_CURSES_MENU_H)
+27: # include <curses/menu.h>
+28: #elif defined(HAVE_MENU_H)
+29: # include <menu.h>
+30: #endif
+31: 
+32: #if defined(HAVE_NCURSESW_FORM_H)
+33: # include <ncursesw/form.h>
+34: #elif defined(HAVE_NCURSES_FORM_H)
+35: # include <ncurses/form.h>
+36: #elif defined(HAVE_CURSES_FORM_H)
+37: # include <curses/form.h>
+38: #elif defined(HAVE_FORM_H)
+39: # include <form.h>
+40: #endif
+41: 
+42: const int sizeof_FIELD = (int) sizeof(FIELD);
+/* end */
+
+--------------------
+
+block in <main>: checking for sizeof(FORM) is available... -------------------- yes
+
+"gcc -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-FWwz7w/ruby2.5-2.5.1=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -DHAVE_NCURSES_H -DHAVE_BEEP -DHAVE_BKGD -DHAVE_BKGDSET -DHAVE_CURS_SET -DHAVE_DELETELN -DHAVE_DOUPDATE -DHAVE_FLASH -DHAVE_GETBKGD -DHAVE_GETNSTR -DHAVE_ISENDWIN -DHAVE_KEYNAME -DHAVE_KEYPAD -DHAVE_RESIZETERM -DHAVE_SCRL -DHAVE_SETSCRREG -DHAVE_UNGETCH -DHAVE_WATTROFF -DHAVE_WATTRON -DHAVE_WATTRSET -DHAVE_WBKGD -DHAVE_WBKGDSET -DHAVE_WDELETELN -DHAVE_WGETNSTR -DHAVE_WRESIZE -DHAVE_WSCRL -DHAVE_WSETSCRREG -DHAVE_WERASE -DHAVE_REDRAWWIN -DHAVE_MVDERWIN -DHAVE_DERWIN -DHAVE_TOUCHWIN -DHAVE_UNTOUCHWIN -DHAVE_WTOUCHLN -DHAVE_IS_LINETOUCHED -DHAVE_IS_WINTOUCHED -DHAVE_DEF_PROG_MODE -DHAVE_RESET_PROG_MODE -DHAVE_TIMEOUT -DHAVE_WTIMEOUT -DHAVE_NODELAY -DHAVE_INIT_COLOR -DHAVE_WCOLOR_SET -DHAVE_USE_DEFAULT_COLORS -DHAVE_ASSUME_DEFAULT_COLORS -DHAVE_NEWPAD -DSIZEOF_CHTYPE\=SIZEOF_UNSIGNED_LONG -DTYPEOF_CHTYPE\=\"unsigned\ long\" -DPRI_CHTYPE_PREFIX\=PRI_LONG_PREFIX -DCHTYPE2NUM\=ULONG2NUM -DNUM2CHTYPE\=NUM2ULONG -D_XOPEN_SOURCE_EXTENDED -DHAVE_ESCDELAY -DHAVE_TABSIZE -DHAVE_COLORS -DHAVE_COLOR_PAIRS -DHAVE_FUNC_CURSES_VERSION -DHAVE_MENU_H -DHAVE_MENU -DHAVE_FORM_H -DHAVE_FORM -DCURSES_SIZEOF_WINDOW\=sizeof\(WINDOW\) -DCURSES_SIZEOF_MEVENT\=sizeof\(MEVENT\) -DCURSES_SIZEOF_ITEM\=sizeof\(ITEM\) -DCURSES_SIZEOF_MENU\=sizeof\(MENU\) -DCURSES_SIZEOF_FIELD\=sizeof\(FIELD\) -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #if defined(HAVE_PDCURSES_H)
+ 4: # include <pdcurses.h>
+ 5: #elif defined(HAVE_NCURSESW_CURSES_H)
+ 6: # include <ncursesw/curses.h>
+ 7: #elif defined(HAVE_NCURSES_CURSES_H)
+ 8: # include <ncurses/curses.h>
+ 9: #elif defined(HAVE_NCURSES_H)
+10: # include <ncurses.h>
+11: #elif defined(HAVE_CURSES_COLR_CURSES_H)
+12: # ifdef HAVE_STDARG_PROTOTYPES
+13: #  include <stdarg.h>
+14: # else
+15: #  include <varargs.h>
+16: # endif
+17: # include <curses_colr/curses.h>
+18: #else
+19: # include <curses.h>
+20: #endif
+21: 
+22: #if defined(HAVE_NCURSESW_MENU_H)
+23: # include <ncursesw/menu.h>
+24: #elif defined(HAVE_NCURSES_MENU_H)
+25: # include <ncurses/menu.h>
+26: #elif defined(HAVE_CURSES_MENU_H)
+27: # include <curses/menu.h>
+28: #elif defined(HAVE_MENU_H)
+29: # include <menu.h>
+30: #endif
+31: 
+32: #if defined(HAVE_NCURSESW_FORM_H)
+33: # include <ncursesw/form.h>
+34: #elif defined(HAVE_NCURSES_FORM_H)
+35: # include <ncurses/form.h>
+36: #elif defined(HAVE_CURSES_FORM_H)
+37: # include <curses/form.h>
+38: #elif defined(HAVE_FORM_H)
+39: # include <form.h>
+40: #endif
+41: 
+42: const int sizeof_FORM = (int) sizeof(FORM);
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+ 1: #ifndef EXTCONF_H
+ 2: #define EXTCONF_H
+ 3: #define HAVE_NCURSES_H 1
+ 4: #define HAVE_BEEP 1
+ 5: #define HAVE_BKGD 1
+ 6: #define HAVE_BKGDSET 1
+ 7: #define HAVE_CURS_SET 1
+ 8: #define HAVE_DELETELN 1
+ 9: #define HAVE_DOUPDATE 1
+10: #define HAVE_FLASH 1
+11: #define HAVE_GETBKGD 1
+12: #define HAVE_GETNSTR 1
+13: #define HAVE_ISENDWIN 1
+14: #define HAVE_KEYNAME 1
+15: #define HAVE_KEYPAD 1
+16: #define HAVE_RESIZETERM 1
+17: #define HAVE_SCRL 1
+18: #define HAVE_SETSCRREG 1
+19: #define HAVE_UNGETCH 1
+20: #define HAVE_WATTROFF 1
+21: #define HAVE_WATTRON 1
+22: #define HAVE_WATTRSET 1
+23: #define HAVE_WBKGD 1
+24: #define HAVE_WBKGDSET 1
+25: #define HAVE_WDELETELN 1
+26: #define HAVE_WGETNSTR 1
+27: #define HAVE_WRESIZE 1
+28: #define HAVE_WSCRL 1
+29: #define HAVE_WSETSCRREG 1
+30: #define HAVE_WERASE 1
+31: #define HAVE_REDRAWWIN 1
+32: #define HAVE_MVDERWIN 1
+33: #define HAVE_DERWIN 1
+34: #define HAVE_TOUCHWIN 1
+35: #define HAVE_UNTOUCHWIN 1
+36: #define HAVE_WTOUCHLN 1
+37: #define HAVE_IS_LINETOUCHED 1
+38: #define HAVE_IS_WINTOUCHED 1
+39: #define HAVE_DEF_PROG_MODE 1
+40: #define HAVE_RESET_PROG_MODE 1
+41: #define HAVE_TIMEOUT 1
+42: #define HAVE_WTIMEOUT 1
+43: #define HAVE_NODELAY 1
+44: #define HAVE_INIT_COLOR 1
+45: #define HAVE_WCOLOR_SET 1
+46: #define HAVE_USE_DEFAULT_COLORS 1
+47: #define HAVE_ASSUME_DEFAULT_COLORS 1
+48: #define HAVE_NEWPAD 1
+49: #define SIZEOF_CHTYPE SIZEOF_UNSIGNED_LONG
+50: #define TYPEOF_CHTYPE unsigned long
+51: #define PRI_CHTYPE_PREFIX PRI_LONG_PREFIX
+52: #define CHTYPE2NUM ULONG2NUM
+53: #define NUM2CHTYPE NUM2ULONG
+54: #define _XOPEN_SOURCE_EXTENDED 1
+55: #define HAVE_ESCDELAY 1
+56: #define HAVE_TABSIZE 1
+57: #define HAVE_COLORS 1
+58: #define HAVE_COLOR_PAIRS 1
+59: #define HAVE_FUNC_CURSES_VERSION 1
+60: #define HAVE_MENU_H 1
+61: #define HAVE_MENU 1
+62: #define HAVE_FORM_H 1
+63: #define HAVE_FORM 1
+64: #define CURSES_SIZEOF_WINDOW sizeof(WINDOW)
+65: #define CURSES_SIZEOF_MEVENT sizeof(MEVENT)
+66: #define CURSES_SIZEOF_ITEM sizeof(ITEM)
+67: #define CURSES_SIZEOF_MENU sizeof(MENU)
+68: #define CURSES_SIZEOF_FIELD sizeof(FIELD)
+69: #define CURSES_SIZEOF_FORM sizeof(FORM)
+70: #endif
+/* end */
+
